@@ -5,14 +5,14 @@ export function useQuoteTicker() {
   return useQuery({
     queryKey: ['ticker'],
     queryFn: async () => {
+      console.log('fetching')
+
       const result = await fetch(
         'https://poloniex.com/public?command=returnTicker'
       )
 
       if (!result.ok) throw new Error('Ошибка загрузки данных с сервера')
       const json = await result.json()
-
-      console.log('refetch')
 
       try {
         return QuoteData.parse(json)
@@ -21,5 +21,6 @@ export function useQuoteTicker() {
       }
     },
     refetchInterval: 5000,
+    onError: (error: Error) => console.log(error.message),
   })
 }
