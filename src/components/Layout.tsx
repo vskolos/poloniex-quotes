@@ -6,7 +6,10 @@ type Props = { title: string; children: ReactNode }
 
 export function Layout({ title, children }: Props) {
   return (
-    <SafeAreaView style={{ flex: 1, gap: 16, padding: 8 }}>
+    <SafeAreaView
+      edges={['left', 'top', 'right']}
+      style={{ flex: 1, gap: 16, padding: 8 }}
+    >
       <Text style={{ fontSize: 20, fontWeight: '500', alignSelf: 'center' }}>
         {title}
       </Text>
