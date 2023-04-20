@@ -24,7 +24,7 @@ export function Home() {
           <Text>Приложение отображает котировки с биржи Poloniex.</Text>
           <Text>
             Для загрузки данных и их кеширования используется библиотека
-            Tanstack Query, для валидации - Zod. В моменте
+            Tanstack Query, для валидации - Zod.
           </Text>
           <Text>
             Посмотрел референсы (в основном, Apple Stocks), и решил вместо
