@@ -20,7 +20,13 @@ export function QuoteList() {
   const ticker = useQuoteTicker()
 
   return (
-    <>
+    <View
+      style={{
+        flex: 1,
+        gap: 8,
+        alignItems: 'center',
+      }}
+    >
       {(ticker.isError || isError) && (
         <View
           style={{
@@ -138,7 +144,7 @@ export function QuoteList() {
           </Text>
         </Pressable>
       </View>
-    </>
+    </View>
   )
 }
 

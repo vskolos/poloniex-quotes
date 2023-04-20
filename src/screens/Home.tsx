@@ -1,70 +1,10 @@
-import { ScrollView, Text, View } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { Layout } from '@/components'
+import { About } from '@/components/About'
 
 export function Home() {
   return (
-    <SafeAreaView style={{ flex: 1, gap: 16, padding: 8 }}>
-      <Text style={{ fontSize: 20, fontWeight: '500', alignSelf: 'center' }}>
-        О приложении
-      </Text>
-      <ScrollView
-        contentContainerStyle={{
-          flex: 1,
-          gap: 16,
-        }}
-      >
-        <View
-          style={{
-            gap: 12,
-            padding: 20,
-            backgroundColor: '#ffffff',
-            borderRadius: 12,
-          }}
-        >
-          <Text>Приложение отображает котировки с биржи Poloniex.</Text>
-          <Text>
-            Для загрузки данных и их кеширования используется библиотека
-            Tanstack Query, для валидации - Zod.
-          </Text>
-          <Text>
-            Посмотрел референсы (в основном, Apple Stocks), и решил вместо
-            таблицы сделать карточки, т.к. они позволяют разместить данные более
-            удобным образом на экране мобильного телефона, особенно, с учетом
-            количества знаков после запятой.
-          </Text>
-          <Text>
-            На экране «Котировки» данные обновляются каждые 5 секунд. На экране
-            «О приложении» обновления котировок не происходит, что можно
-            проследить по сообщениям 'fetching' в консоли, переключаясь между
-            экранами.
-          </Text>
-        </View>
-        <View
-          style={{
-            gap: 12,
-            padding: 20,
-            backgroundColor: '#ffffff',
-            borderRadius: 12,
-          }}
-        >
-          <Text>
-            Для удобства тестирования на экране «Котировки» добавлены кнопки,
-            фиксирующие состояние загрузки и/или ошибки, чтобы можно было
-            посмотреть, как себя ведет приложение.
-          </Text>
-          <Text>
-            Вместо спиннера сделал анимированные плейсхолдеры в процессе
-            загрузки. Если нажать на Force loading, то анимация будет дергаться
-            каждые 5 секунд из-за ререндера родительского компонента, но в
-            реальном использовании это будет невозможно, т.к. данные либо еще
-            загружаются, либо уже есть.
-          </Text>
-          <Text>
-            Анимацию значений не делал, т.к. изменения не настолько частые и
-            значительные, чтобы эта анимация была заметна.
-          </Text>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <Layout title="О приложении">
+      <About />
+    </Layout>
   )
 }
